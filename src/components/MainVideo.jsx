@@ -7,8 +7,8 @@ const VideoContainer = styled.div`
   align-items: center;
 
   iframe {
-    width: 80vw;
-    height: 50vw;
+    width: 50vw;
+    height: 80%;
   }
 `;
 
@@ -20,7 +20,6 @@ export default function MainVideo() {
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
       ></iframe>
     </VideoContainer>
   );

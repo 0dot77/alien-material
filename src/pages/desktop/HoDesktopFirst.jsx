@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { MainLayout } from '../../components/Layout';
 import Logo from '../../components/Logo';
 import MainText from '../../components/MainText';
 import MainVideo from '../../components/MainVideo';
