@@ -17,13 +17,14 @@ _2022.10.11_
 - Structure
 
   - [x] desktop / mobile 분리
-    - [ ] Layout 정리하기
+    - [x] Layout 정리하기
     - [x] background image 적용하기
+    - [ ] main font
 
 - page1
 
-  - [ ] logo
-  - [ ] video
+  - [x] logo
+  - [x] video
 
 # 참고 자료
 

@@ -7,15 +7,21 @@ const FirstLayout = styled.section`
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-rows: 20% 20% 60%;
+  grid-template-rows: 20% 30% 50%;
 `;
 
-export default function HoDesktopFirst() {
+export default function HoMobileFirst() {
   return (
     <FirstLayout>
-      <Logo logoSize={'20rem'} />
-      <MainText />
-      <MainVideo />
+      <Logo logoSize={'10rem'} />
+      <MainText
+        enFontSize={'.5rem'}
+        krFontSize={'.5rem'}
+      />
+      <MainVideo
+        videoWidth={'90vw'}
+        videoHeight={'90%'}
+      />
     </FirstLayout>
   );
 }

@@ -18,14 +18,17 @@ const LogoContainer = styled.div`
   align-items: center;
 
   img {
-    width: 20rem;
+    width: ${(props) => props.logoSize};
     animation: ${LogoAnim} 3s linear infinite alternate;
   }
 `;
 
-export default function Logo() {
+/**
+ * @param {string} logoSize rem 사용
+ */
+export default function Logo({ logoSize }) {
   return (
-    <LogoContainer>
+    <LogoContainer logoSize={logoSize}>
       <picture>
         <soruce
           srcset={MainLogoWebp}

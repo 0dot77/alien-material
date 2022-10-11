@@ -1,7 +1,7 @@
 import { MobileLayout, DesktopLayout } from '../components/Layout';
 import { useMediaQuery } from 'react-responsive';
-import Logo from '../components/Logo';
 import HoDesktopFirst from './desktop/HoDesktopFirst';
+import HoMobileFirst from './mobile/HoMobileFirst';
 
 export default function HeadOffice() {
   const isMobile = useMediaQuery({
@@ -11,7 +11,9 @@ export default function HeadOffice() {
   return (
     <>
       {isMobile ? (
-        <MobileLayout>모바일</MobileLayout>
+        <MobileLayout>
+          <HoMobileFirst />
+        </MobileLayout>
       ) : (
         <DesktopLayout>
           <HoDesktopFirst />

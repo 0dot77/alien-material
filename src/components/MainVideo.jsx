@@ -7,14 +7,22 @@ const VideoContainer = styled.div`
   align-items: center;
 
   iframe {
-    width: 50vw;
-    height: 80%;
+    width: ${(props) => props.videoWidth};
+    height: ${(props) => props.videoHeight};
   }
 `;
 
-export default function MainVideo() {
+/**
+ * @param {string} videoWidth vw 사용
+ * @param {string} videoHeight % 사용
+ */
+
+export default function MainVideo({ videoWidth = '50vw', videoHeight = '80%' }) {
   return (
-    <VideoContainer>
+    <VideoContainer
+      videoWidth={videoWidth}
+      videoHeight={videoHeight}
+    >
       <iframe
         src="https://www.youtube.com/embed/2Vndg9IBB5w"
         title="YouTube video player"
