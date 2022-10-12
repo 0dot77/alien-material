@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { backgroundImageJpg, backgroundImageWebp } from '../assets/images';
 
 const Mobile = styled.main`
   width: 100%;

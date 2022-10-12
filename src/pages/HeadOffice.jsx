@@ -5,6 +5,7 @@ import HoDesktopFirst from './desktop/HoDesktopFirst';
 import HoDesktopSecond from './desktop/HoDesktopSecond';
 import HoMobileFirst from './mobile/HoMobileFirst';
 import HoMobileSecond from './mobile/HoMobileSecond';
+import HoDesktopThird from './desktop/HoDesktopThird';
 
 export default function HeadOffice() {
   const isMobile = useMediaQuery({
@@ -28,6 +29,7 @@ export default function HeadOffice() {
             <FullPageSections>
               <HoDesktopFirst />
               <HoDesktopSecond />
+              <HoDesktopThird />
             </FullPageSections>
           </Fullpage>
         </DesktopLayout>

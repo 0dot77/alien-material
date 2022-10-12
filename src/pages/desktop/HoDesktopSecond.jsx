@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 import { FullpageSection } from '@ap.cx/react-fullpage';
 
-const SecondLayout = styled.section`
+const Temp = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  color: white;
+  font-size: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export default function HoDesktopSecond() {
@@ -13,6 +18,8 @@ export default function HoDesktopSecond() {
         width: '100%',
         height: '100vh',
       }}
-    ></FullpageSection>
+    >
+      <Temp>노이즈</Temp>
+    </FullpageSection>
   );
 }
