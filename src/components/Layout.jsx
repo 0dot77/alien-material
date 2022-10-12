@@ -1,16 +1,17 @@
 import styled from 'styled-components';
+import { backgroundImageJpg, backgroundImageWebp } from '../assets/images';
 
 const Mobile = styled.main`
   width: 100%;
-  height: 400vh;
   display: flex;
   flex-direction: column;
+  font-family: 'KoPubWorldDotum';
 `;
 
 const Desktop = styled.main`
   width: 100%;
-  height: 400vh;
-  display: flex;
+  height: 100vh;
+  font-family: 'KoPubWorldDotum';
 `;
 
 const MainLayout = styled.section`

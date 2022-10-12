@@ -6,7 +6,7 @@ const SecondLayout = styled.section`
   height: 100vh;
 `;
 
-export default function HoDesktopSecond() {
+export default function HoMobileSecond() {
   return (
     <FullpageSection
       style={{

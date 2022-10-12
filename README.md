@@ -20,6 +20,11 @@ _2022.10.11_
     - [x] Layout 정리하기
     - [x] background image 적용하기
     - [ ] main font
+    - [x] mobile notch 수정
+      - https://erikmartinjordan.com/safari-ios-notch-change-color
+    - [ ] CDN 전송방식 서치
+    - [ ] full page scroll 방식 사용하기
+      - react-full-page
 
 - page1
 
