@@ -102,6 +102,10 @@ const GsapContainer = styled.div`
   scroll-snap-stop: always;
 `;
 
+/**
+ * count에 맞춰서 기관 이미지 올라오도록 만들기
+ */
+
 export default function HoDesktopThird({ desktopThirdSectionRef, inViewThird }) {
   // resize check
   const size = useWindowSize();
