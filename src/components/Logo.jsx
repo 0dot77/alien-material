@@ -16,24 +16,24 @@ const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   img {
     width: ${(props) => props.logoSize};
-    animation: ${LogoAnim} 3s linear infinite alternate;
+    animation: ${LogoAnim} 3s ease-in-out infinite alternate;
   }
 `;
 
 /**
  * @param {string} logoSize rem 사용
+ * @param {string} marginTop rem 사용
  */
 export default function Logo({ logoSize }) {
   return (
     <LogoContainer logoSize={logoSize}>
       <picture>
-        <soruce
-          srcset={MainLogoWebp}
+        <source
+          srcSet={MainLogoWebp}
           type="image/webp"
-        ></soruce>
+        ></source>
         <img
           src={MainLogoPng}
           alt="main-logo"

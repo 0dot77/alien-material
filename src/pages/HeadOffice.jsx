@@ -1,37 +1,43 @@
+import { useInView } from 'react-intersection-observer';
 import { MobileLayout, DesktopLayout } from '../components/Layout';
 import { useMediaQuery } from 'react-responsive';
-import Fullpage, { FullPageSections, FullpageSection } from '@ap.cx/react-fullpage';
 import HoDesktopFirst from './desktop/HoDesktopFirst';
 import HoDesktopSecond from './desktop/HoDesktopSecond';
 import HoMobileFirst from './mobile/HoMobileFirst';
 import HoMobileSecond from './mobile/HoMobileSecond';
 import HoDesktopThird from './desktop/HoDesktopThird';
+import HoDesktopFourth from './desktop/HoDesktopFourth';
 
 export default function HeadOffice() {
   const isMobile = useMediaQuery({
     query: '(max-width:767px)',
+  });
+  const [desktopFirstSectionRef, inViewFirst] = useInView({
+    threshold: 0.75,
+    triggerOnce: false,
+  });
+
+  const [desktopThirdSectionRef, inViewThird] = useInView({
+    threshold: 0.01,
+    triggerOnce: false,
   });
 
   return (
     <>
       {isMobile ? (
         <MobileLayout>
-          <Fullpage>
-            <FullPageSections>
-              <HoMobileFirst />
-              <HoMobileSecond />
-            </FullPageSections>
-          </Fullpage>
+          <HoMobileFirst />
+          <HoMobileSecond />
         </MobileLayout>
       ) : (
         <DesktopLayout>
-          <Fullpage>
-            <FullPageSections>
-              <HoDesktopFirst />
-              <HoDesktopSecond />
-              <HoDesktopThird />
-            </FullPageSections>
-          </Fullpage>
+          <HoDesktopFirst desktopFirstSectionRef={desktopFirstSectionRef} />
+          <HoDesktopSecond />
+          <HoDesktopThird
+            desktopThirdSectionRef={desktopThirdSectionRef}
+            inViewThird={inViewThird}
+          />
+          <HoDesktopFourth />
         </DesktopLayout>
       )}
     </>

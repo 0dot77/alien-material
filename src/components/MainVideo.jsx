@@ -1,15 +1,30 @@
 import styled from 'styled-components';
+import { videoFrameGif } from '../assets/images';
 
 const VideoContainer = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   iframe {
-    width: ${(props) => props.videoWidth};
-    height: ${(props) => props.videoHeight};
+    position: absolute;
+    z-index: 10;
+    width: 50vh;
+    height: 50%;
+    border: none;
+    border-radius: 10px;
   }
+`;
+
+const GifContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  background-image: url(${videoFrameGif});
+  background-position: center;
+  background-repeat: no-repeat;
 `;
 
 /**
@@ -17,17 +32,17 @@ const VideoContainer = styled.div`
  * @param {string} videoHeight % 사용
  */
 
-export default function MainVideo({ videoWidth = '50vw', videoHeight = '80%' }) {
+export default function MainVideo({ videoWidth = '90%', videoHeight = '80%' }) {
   return (
     <VideoContainer
       videoWidth={videoWidth}
       videoHeight={videoHeight}
     >
+      <GifContainer />
       <iframe
         src="https://www.youtube.com/embed/2Vndg9IBB5w"
         title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
       ></iframe>
     </VideoContainer>
   );

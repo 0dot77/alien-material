@@ -1,25 +1,17 @@
 import styled from 'styled-components';
-import { FullpageSection } from '@ap.cx/react-fullpage';
+import NoiseObj from '../../components/NoiseObj';
 
-const Temp = styled.div`
+const SecondLayout = styled.section`
   width: 100%;
-  height: 100%;
-  color: white;
-  font-size: 10rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 `;
 
 export default function HoDesktopSecond() {
   return (
-    <FullpageSection
-      style={{
-        width: '100%',
-        height: '100vh',
-      }}
-    >
-      <Temp>노이즈</Temp>
-    </FullpageSection>
+    <SecondLayout>
+      <NoiseObj />
+    </SecondLayout>
   );
 }

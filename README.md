@@ -19,17 +19,29 @@ _2022.10.11_
   - [x] desktop / mobile 분리
     - [x] Layout 정리하기
     - [x] background image 적용하기
-    - [ ] main font
+    - [x] main font
     - [x] mobile notch 수정
       - https://erikmartinjordan.com/safari-ios-notch-change-color
     - [ ] CDN 전송방식 서치
-    - [ ] full page scroll 방식 사용하기
+    - [x] full page scroll 방식 사용하기
       - react-full-page
+    - [ ] 스크롤 훅 만들기
 
 - page1
 
   - [x] logo
   - [x] video
+
+_2022.10.14_
+
+- page 2
+  - [x] react-three를 사용해서 노이즈 오브젝트 제작
+    - https://codesandbox.io/s/el11e?file=/src/App.js
+  - [ ] 특정 지점을 클릭하면 텍스트가 팝업되도록? 혹은 화면에 표시되도록 설정하기
+
+_2022.10.15_
+
+- 외계물질 페이지 얼추 끝내기
 
 # 참고 자료
 

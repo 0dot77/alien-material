@@ -9,13 +9,8 @@ const Mobile = styled.main`
 
 const Desktop = styled.main`
   width: 100%;
-  height: 100vh;
   font-family: 'KoPubWorldDotum';
-`;
-
-const MainLayout = styled.section`
-  width: 100%;
-  height: 100vh;
+  max-height: 100vh;
 `;
 
 const MobileLayout = ({ children }) => {
@@ -26,4 +21,4 @@ const DesktopLayout = ({ children }) => {
   return <Desktop>{children}</Desktop>;
 };
 
-export { MobileLayout, DesktopLayout, MainLayout };
+export { MobileLayout, DesktopLayout };

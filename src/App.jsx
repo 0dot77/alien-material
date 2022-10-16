@@ -8,6 +8,10 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
     box-sizing: border-box;
   }
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
   html,
   body {
     line-height: 1.2;
@@ -19,7 +23,6 @@ const GlobalStyle = createGlobalStyle`
     }
     background-image: url(${backgroundImageWebp}), url(${backgroundImageJpg}); 
     background-size: cover;
-    background-position: bottom right;
   }
 
   /* font */
