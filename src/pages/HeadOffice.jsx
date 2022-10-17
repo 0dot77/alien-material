@@ -1,12 +1,15 @@
 import { useInView } from 'react-intersection-observer';
 import { MobileLayout, DesktopLayout } from '../components/Layout';
 import { useMediaQuery } from 'react-responsive';
+import { lazy, Suspense } from 'react';
 import HoDesktopFirst from './desktop/HoDesktopFirst';
 import HoDesktopSecond from './desktop/HoDesktopSecond';
 import HoMobileFirst from './mobile/HoMobileFirst';
 import HoMobileSecond from './mobile/HoMobileSecond';
 import HoDesktopThird from './desktop/HoDesktopThird';
 import HoDesktopFourth from './desktop/HoDesktopFourth';
+
+const ThirdPageComponent = lazy(() => import('./desktop/HoDesktopThird'));
 
 export default function HeadOffice() {
   const isMobile = useMediaQuery({
@@ -32,10 +35,12 @@ export default function HeadOffice() {
         <DesktopLayout>
           <HoDesktopFirst />
           <HoDesktopSecond />
-          <HoDesktopThird
-            desktopThirdSectionRef={desktopThirdSectionRef}
-            inViewThird={inViewThird}
-          />
+          <Suspense fallback={<p>기관에게 수신 요청중...</p>}>
+            <ThirdPageComponent
+              desktopThirdSectionRef={desktopThirdSectionRef}
+              inViewThird={inViewThird}
+            />
+          </Suspense>
           <HoDesktopFourth />
         </DesktopLayout>
       )}
