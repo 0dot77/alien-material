@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 import { backgroundImageJpg, backgroundImageWebp } from './assets/images';
 import Router from './Router';
+import { useEffect } from 'react';
+import { institutionImgPngs, institutionImgWebps } from './assets/institution';
+import { logosWebps, logosPngs } from './assets/institutionLogo';
+import { institutionPersonPngs, institutionPersonWebps } from './assets/institutionPerson';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -41,6 +45,23 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
+  useEffect(() => {
+    function preloading(imageArray) {
+      imageArray.forEach((url) => {
+        const image = new Image();
+        image.src = url;
+      });
+    }
+
+    preloading([
+      ...institutionImgPngs,
+      ...institutionImgWebps,
+      ...logosPngs,
+      ...logosWebps,
+      ...institutionPersonPngs,
+      ...institutionImgWebps,
+    ]);
+  }, []);
   return (
     <>
       <GlobalStyle />
