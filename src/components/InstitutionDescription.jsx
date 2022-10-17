@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import institutionsData from '../data/InstitutionsData';
+import institutionsData from '../data/institutionsData';
 
 const DescriptionContainer = styled.article`
   width: 100%;
