@@ -8,16 +8,17 @@ const GlobalStyle = createGlobalStyle`
     padding:0;
     box-sizing: border-box;
   }
+
   html {
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
   }
   html,
   body {
+    width:100%;
+    height:100%;
     line-height: 1.2;
     font-size: 16px;
-    width: 100%;
-    height: 100%;
     &::-webkit-scrollbar {
       display: none;
     }

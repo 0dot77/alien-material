@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const FourthLayout = styled.section`
   width: 100%;
   height: 100vh;
-  border: 1px solid purple;
   scroll-snap-align: start;
   scroll-snap-stop: always;
 `;

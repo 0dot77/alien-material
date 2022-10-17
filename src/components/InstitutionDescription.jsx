@@ -8,6 +8,7 @@ const DescriptionContainer = styled.article`
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
 `;
 
 const SubContainer = styled.div`

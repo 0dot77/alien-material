@@ -8,6 +8,9 @@ import Institution from '../../components/Institution';
 
 const ThirdLayout = styled.section`
   width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 `;
 
 const InstitutionContainer = styled.section`
@@ -43,6 +46,7 @@ const LogoBox = styled.div`
 
 const Logo = styled.img`
   position: absolute;
+  opacity: 0;
 `;
 
 const GsapContainer = styled.div`
@@ -84,9 +88,11 @@ export default function HoDesktopThird({ desktopThirdSectionRef, inViewThird }) 
             '.logo',
             {
               x: '100vw',
+              opacity: 0,
             },
             {
               x: window.innerWidth / 2 - logoBoxWidth / 2,
+              opacity: 1,
               duration: 1.5,
             }
           )

@@ -12,14 +12,13 @@ export default function HeadOffice() {
   const isMobile = useMediaQuery({
     query: '(max-width:767px)',
   });
-  const [desktopFirstSectionRef, inViewFirst] = useInView({
-    threshold: 0.75,
-    triggerOnce: false,
-  });
+  // const [desktopFirstSectionRef, inViewFirst] = useInView({
+  //   threshold: 0.75,
+  //   triggerOnce: false,
+  // });
 
   const [desktopThirdSectionRef, inViewThird] = useInView({
-    threshold: 0.01,
-    triggerOnce: false,
+    threshold: 1,
   });
 
   return (
@@ -31,7 +30,7 @@ export default function HeadOffice() {
         </MobileLayout>
       ) : (
         <DesktopLayout>
-          <HoDesktopFirst desktopFirstSectionRef={desktopFirstSectionRef} />
+          <HoDesktopFirst />
           <HoDesktopSecond />
           <HoDesktopThird
             desktopThirdSectionRef={desktopThirdSectionRef}
