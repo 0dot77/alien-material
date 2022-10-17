@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import logos from '../../assets/institutionLogo';
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import { logosPngs } from '../../assets/institutionLogo';
 import useWindowSize from '../../hooks/useWindowSize';
-import { institutionImgPngs, institutionImgWebps } from '../../assets/institution';
-import { institutionPersonPngs, institutionPersonWebps } from '../../assets/institutionPerson';
+import InstitutionDescription from '../../components/InstitutionDescription';
+import Institution from '../../components/Institution';
 
 const ThirdLayout = styled.section`
   width: 100%;
@@ -15,54 +15,6 @@ const InstitutionContainer = styled.section`
   height: 100%;
   grid-row: 1;
   position: relative;
-`;
-
-const InstitutionDescription = styled.article`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  div {
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    div {
-      color: white;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      div {
-        margin-bottom: 1rem;
-      }
-    }
-    soruce,
-    img {
-      width: 80%;
-      border: 5px solid rgba(7, 18, 170, 1);
-    }
-  }
-`;
-
-const Institution = styled.picture`
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  object-fit: contain;
-
-  source,
-  img {
-    position: absolute;
-    width: auto;
-    height: 60%;
-  }
 `;
 
 const LogoContainer = styled.article`
@@ -83,8 +35,9 @@ const LogoBox = styled.div`
   transform-origin: center;
 
   img {
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
+    height: 90%;
   }
 `;
 
@@ -102,11 +55,13 @@ const GsapContainer = styled.div`
   scroll-snap-stop: always;
 `;
 
-/**
- * count에 맞춰서 기관 이미지 올라오도록 만들기
- */
+// * 스타일은 최상단 컴포넌트에 두고, 데이터만 따로 처리하기
+// * 데이터를 참조할 때 배열을 사용해서, state의 값과 연동하기
 
 export default function HoDesktopThird({ desktopThirdSectionRef, inViewThird }) {
+  // Institutions
+  const INSTITUTIONS_LIST = ['boltFamily', 'boltCenter', 'genetica', 'apac', 'mecha', 'chocheng', 'ionic', 'seti'];
+
   // resize check
   const size = useWindowSize();
 
@@ -132,7 +87,7 @@ export default function HoDesktopThird({ desktopThirdSectionRef, inViewThird }) 
             },
             {
               x: window.innerWidth / 2 - logoBoxWidth / 2,
-              duration: 3,
+              duration: 1.5,
             }
           )
           .fromTo(
@@ -144,7 +99,7 @@ export default function HoDesktopThird({ desktopThirdSectionRef, inViewThird }) 
             {
               y: 0,
               opacity: 1,
-              duration: 3,
+              duration: 1.5,
             }
           )
           .fromTo(
@@ -153,25 +108,25 @@ export default function HoDesktopThird({ desktopThirdSectionRef, inViewThird }) 
             {
               y: 0,
               opacity: 1,
-              duration: 3,
+              duration: 1.5,
             }
           )
           .to('.logo', {
             x: 0 - logoBoxWidth,
-            duration: 3,
+            duration: 1.5,
           })
           .to('.inst', {
             y: '10vh',
             opacity: 0,
-            duration: 3,
+            duration: 1.5,
           })
           .to('.des', {
             y: '10vh',
             opacity: 0,
-            duration: 3,
+            duration: 1.5,
             onComplete: () => {
               setLogoCount((current) => {
-                if (current > institutionImgPngs.length) {
+                if (current === INSTITUTIONS_LIST.length - 1) {
                   return (current = 0);
                 }
                 return current + 1;
@@ -193,39 +148,13 @@ export default function HoDesktopThird({ desktopThirdSectionRef, inViewThird }) 
     <ThirdLayout ref={desktopThirdSectionRef}>
       <GsapContainer ref={el}>
         <InstitutionContainer>
-          <InstitutionDescription className="des">
-            <div>
-              <picture>
-                <source srcSet={institutionPersonPngs[logoCount]} />
-                <img
-                  src={institutionPersonWebps[logoCount]}
-                  alt="institution"
-                />
-              </picture>
-              <div>
-                <div>
-                  <h2>Mecha:(L) (메카라지)</h2>
-                  <h2>James Banks, Chairman (회장 제임스 뱅크스)</h2>
-                </div>
-                <div>
-                  <p>Space Age New Weapons Development and Training Agency</p>
-                  <p>우주시대 신무기 개발 및 양성 기관</p>
-                </div>
-              </div>
-            </div>
-          </InstitutionDescription>
-          <Institution className="inst">
-            <source srcSet={institutionImgWebps[logoCount]} />
-            <img
-              src={institutionImgPngs[logoCount]}
-              alt="mecaragi"
-            />
-          </Institution>
+          <InstitutionDescription logoState={INSTITUTIONS_LIST[logoCount]} />
+          <Institution logoState={INSTITUTIONS_LIST[logoCount]} />
         </InstitutionContainer>
         <LogoContainer>
-          <LogoBox className="logo-tree-1">
+          <LogoBox>
             <Logo
-              src={logos[logoCount]}
+              src={logosPngs[logoCount]}
               alt="logo"
               ref={logoRef}
               className="logo"

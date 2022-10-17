@@ -4,34 +4,34 @@ import chochengPersonPng from './institution-persons/png/chocheng-person.png';
 import chochengPersonWebp from './institution-persons/webp/chocheng-person.webp';
 import geneticaPersonPng from './institution-persons/png/genetica-person.png';
 import geneticaPersonWebp from './institution-persons/webp/genetica-person.webp';
-import ionicPersonPng from './institution-persons/png/mecaragi-person.png';
-import ionicPersonWebp from './institution-persons/webp/mecaragi-person.webp';
+import ionicPersonPng from './institution-persons/png/ionic-person.png';
+import ionicPersonWebp from './institution-persons/webp/ionic-person.webp';
 import mecaragiPersonPng from './institution-persons/png/mecaragi-person.png';
 import mecaragiPersonWebp from './institution-persons/webp/mecaragi-person.webp';
 import setiPersonPng from './institution-persons/png/seti-person.png';
 import setiPersonWebp from './institution-persons/webp/seti-person.webp';
-import voltcenterPersonPng from './institution-persons/png/voltcenter-person.png';
-import voltcenterPersonWebp from './institution-persons/webp/voltcenter-person.webp';
+import boltcenterPersonPng from './institution-persons/png/boltcenter-person.png';
+import boltcenterPersonWebp from './institution-persons/webp/boltcenter-person.webp';
 
 const institutionPersonPngs = [
-  mecaragiPersonPng,
   null,
-  voltcenterPersonPng,
-  ionicPersonPng,
+  boltcenterPersonPng,
   geneticaPersonPng,
-  chochengPersonPng,
   apacPersonPng,
+  mecaragiPersonPng,
+  chochengPersonPng,
+  ionicPersonPng,
   setiPersonPng,
 ];
 
 const institutionPersonWebps = [
-  mecaragiPersonWebp,
   null,
-  voltcenterPersonWebp,
-  ionicPersonWebp,
+  boltcenterPersonWebp,
   geneticaPersonWebp,
-  chochengPersonWebp,
   apacPersonWebp,
+  mecaragiPersonWebp,
+  chochengPersonWebp,
+  ionicPersonWebp,
   setiPersonWebp,
 ];
 
