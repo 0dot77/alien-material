@@ -96,7 +96,7 @@ const institutionsData = {
     texts: [
       'The SETI Institute',
       'SETI; Search for Extra-Terrestrial Intelligence(외계 지적생명탐사 연구소)',
-      'Dr. Daphne Fernández, Ph.D in Electromagnetism‎ (다프네 페르난데스 박사, 전자기학 박사)',
+      'Dr. Daphne Fernández, Ph.D in Electromagnetism (다프네 페르난데스 박사, 전자기학 박사)',
       'Radio frequency signal detection analysis; Passive extraterrestrial intelligence exploration',
       '무선 주파수 신호 탐지 분석; 수동적 외계 지능 탐사',
     ],
