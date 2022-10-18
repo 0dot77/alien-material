@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { amrpLogos } from '../../assets/programSource';
 
@@ -15,7 +16,7 @@ const ProgramLogoContainer = styled.article`
     height: 100%;
     justify-content: center;
     align-items: center;
-    transition: background ease-in-out 1s;
+    transition: background ease-in-out 0.75s;
     object-fit: contain;
     &:hover {
       background: #ffffff;
@@ -31,8 +32,13 @@ const ProgramLogoContainer = styled.article`
 `;
 
 export default function ProgramLogo({ logo = null }) {
+  const nav = useNavigate();
   return (
-    <ProgramLogoContainer>
+    <ProgramLogoContainer
+      onClick={() => {
+        nav('./news');
+      }}
+    >
       <picture>
         <source srcSet={logo === 'am' ? amrpLogos[0] : amrpLogos[2]} />
         <img

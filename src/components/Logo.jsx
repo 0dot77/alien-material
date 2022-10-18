@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 import { MainLogoPng, MainLogoWebp } from '../assets/images';
 
-const LogoAnim = keyframes`
+export const LogoAnim = keyframes`
     from {
         transform: rotateY(0deg);
     }

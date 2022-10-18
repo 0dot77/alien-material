@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HackedOffice from './pages/HackedOffice';
 import HeadOffice from './pages/HeadOffice';
+import AMnews from './components/ForthPages/AMnews';
 
 export default function Router() {
   return (
@@ -15,8 +16,8 @@ export default function Router() {
           element={<HackedOffice />}
         />
         <Route
-          path="/new"
-          element={null}
+          path="/news"
+          element={<AMnews />}
         />
         <Route
           path="/research"
