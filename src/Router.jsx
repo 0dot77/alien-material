@@ -14,6 +14,14 @@ export default function Router() {
           path="/changed"
           element={<HackedOffice />}
         />
+        <Route
+          path="/new"
+          element={null}
+        />
+        <Route
+          path="/research"
+          element={null}
+        />
       </Routes>
     </BrowserRouter>
   );

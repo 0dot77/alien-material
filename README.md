@@ -47,10 +47,16 @@ _2022.10.17_
   - [x] png -> webp
   - [x] 데이터 분리하기
   - [x] GSAP 적용하기
+  - [x] image preload
+    - [ ] loading을 따로 만들어야 할까? 이미지가 너무 많다.
 
 - 뉴스
 
+  - [ ] 페이지 선택 버튼 만들기
+    - [ ]
+
 - 노이즈
+  - [ ] lazy loading 혹은 suspense를 사용해서 intersection observe가 작동하면 동작하도록 만들기 (최적화)
 
 # 참고 자료
 
