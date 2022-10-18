@@ -36,7 +36,11 @@ export default function ProgramLogo({ logo = null }) {
   return (
     <ProgramLogoContainer
       onClick={() => {
-        nav('./news');
+        if (logo === 'am') {
+          nav('./news');
+        } else {
+          nav('./research');
+        }
       }}
     >
       <picture>

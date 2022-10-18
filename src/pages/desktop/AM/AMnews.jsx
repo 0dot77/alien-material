@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import ForthPageLayout from './ForthPageLayout';
-import { amNews } from '../../assets/programSource';
+import ForthPageLayout from '../../../components/ForthPages/ForthPageLayout';
+import { amNews } from '../../../assets/programSource';
 
 const NewsContainer = styled.article`
   width: 100%;

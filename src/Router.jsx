@@ -1,7 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HackedOffice from './pages/HackedOffice';
 import HeadOffice from './pages/HeadOffice';
-import AMnews from './components/ForthPages/AMnews';
+import AMnews from './pages/desktop/AM/AMnews';
+import RProgram from './pages/desktop/RP/RProgram';
 
 export default function Router() {
   return (
@@ -21,7 +22,7 @@ export default function Router() {
         />
         <Route
           path="/research"
-          element={null}
+          element={<RProgram />}
         />
       </Routes>
     </BrowserRouter>

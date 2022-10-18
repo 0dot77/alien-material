@@ -40,7 +40,7 @@ export default function MainVideo({ videoWidth = '90%', videoHeight = '80%' }) {
     >
       <GifContainer />
       <iframe
-        src="https://www.youtube.com/embed/2Vndg9IBB5w"
+        src="https://www.youtube.com/embed/evTf7FHOD20"
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
       ></iframe>
