@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { institutionImgPngs, institutionImgWebps } from './assets/institution';
 import { logosWebps, logosPngs } from './assets/institutionLogo';
 import { institutionPersonPngs, institutionPersonWebps } from './assets/institutionPerson';
+import { amNews } from './assets/programSource';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -60,6 +61,7 @@ function App() {
       ...logosWebps,
       ...institutionPersonPngs,
       ...institutionImgWebps,
+      ...amNews,
     ]);
   }, []);
   return (

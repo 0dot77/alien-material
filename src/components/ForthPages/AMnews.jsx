@@ -21,6 +21,10 @@ const News = styled.div`
   }
 `;
 
+const FallBackMessage = styled.div`
+  color: white;
+`;
+
 export default function AMnews() {
   return (
     <ForthPageLayout>
