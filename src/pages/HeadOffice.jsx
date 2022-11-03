@@ -1,15 +1,18 @@
 import { useInView } from 'react-intersection-observer';
 import { MobileLayout, DesktopLayout } from '../components/Layout';
 import { useMediaQuery } from 'react-responsive';
-import { lazy, Suspense } from 'react';
+
+// desktop
 import HoDesktopFirst from './desktop/HoDesktopFirst';
 import HoDesktopSecond from './desktop/HoDesktopSecond';
-import HoMobileFirst from './mobile/HoMobileFirst';
-import HoMobileSecond from './mobile/HoMobileSecond';
 import HoDesktopThird from './desktop/HoDesktopThird';
 import HoDesktopFourth from './desktop/HoDesktopFourth';
 
-const ThirdPageComponent = lazy(() => import('./desktop/HoDesktopThird'));
+// mobile
+import HoMobileFirst from './mobile/HoMobileFirst';
+import HoMobileSecond from './mobile/HoMobileSecond';
+import HoMobileThird from './mobile/HoMobileThird';
+import HoMobileFourth from './mobile/HoMobileFourth';
 
 export default function HeadOffice() {
   const isMobile = useMediaQuery({
@@ -30,12 +33,14 @@ export default function HeadOffice() {
         <MobileLayout>
           <HoMobileFirst />
           <HoMobileSecond />
+          <HoMobileThird />
+          <HoMobileFourth />
         </MobileLayout>
       ) : (
         <DesktopLayout>
           <HoDesktopFirst />
           <HoDesktopSecond />
-          <ThirdPageComponent
+          <HoDesktopThird
             desktopThirdSectionRef={desktopThirdSectionRef}
             inViewThird={inViewThird}
           />
