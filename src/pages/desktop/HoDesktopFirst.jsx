@@ -10,12 +10,13 @@ const FirstLayout = styled.section`
   grid-template-rows: 20% 20% 60%;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  font-size: 16px;
 `;
 
 export default function HoDesktopFirst({ desktopFirstSectionRef }) {
   return (
     <FirstLayout ref={desktopFirstSectionRef}>
-      <Logo logoSize={'20rem'} />
+      <Logo logoSize={'15em'} />
       <MainText />
       <MainVideo />
     </FirstLayout>

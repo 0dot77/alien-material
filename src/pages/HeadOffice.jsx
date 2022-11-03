@@ -35,12 +35,10 @@ export default function HeadOffice() {
         <DesktopLayout>
           <HoDesktopFirst />
           <HoDesktopSecond />
-          <Suspense fallback={<p>기관에게 수신 요청중...</p>}>
-            <ThirdPageComponent
-              desktopThirdSectionRef={desktopThirdSectionRef}
-              inViewThird={inViewThird}
-            />
-          </Suspense>
+          <ThirdPageComponent
+            desktopThirdSectionRef={desktopThirdSectionRef}
+            inViewThird={inViewThird}
+          />
           <HoDesktopFourth />
         </DesktopLayout>
       )}

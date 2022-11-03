@@ -17,6 +17,9 @@ const GlobalStyle = createGlobalStyle`
   html {
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: none; /*Chrome, Safari, newer versions of Opera*/
+    -moz-text-size-adjust: none; /*Firefox*/
+    -o-text-size-adjust: none; /*old versions of Opera*/
   }
   html,
   body {

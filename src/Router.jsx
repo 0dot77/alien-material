@@ -1,30 +1,37 @@
+import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HackedOffice from './pages/HackedOffice';
-import HeadOffice from './pages/HeadOffice';
-import AMnews from './pages/desktop/AM/AMnews';
-import RProgram from './pages/desktop/RP/RProgram';
+
+const HackedOffice = lazy(() => import('./pages/HackedOffice'));
+
+const HeadOffice = lazy(() => import('./pages/HeadOffice'));
+
+const AMnews = lazy(() => import('./pages/desktop/AM/AMnews'));
+
+const RProgram = lazy(() => import('./pages/desktop/RP/RProgram'));
 
 export default function Router() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={<HeadOffice />}
-        />
-        <Route
-          path="/changed"
-          element={<HackedOffice />}
-        />
-        <Route
-          path="/news"
-          element={<AMnews />}
-        />
-        <Route
-          path="/research"
-          element={<RProgram />}
-        />
-      </Routes>
+      <Suspense fallback={<h1>준비중...</h1>}>
+        <Routes>
+          <Route
+            path="/"
+            element={<HeadOffice />}
+          />
+          <Route
+            path="/changed"
+            element={<HackedOffice />}
+          />
+          <Route
+            path="/news"
+            element={<AMnews />}
+          />
+          <Route
+            path="/research"
+            element={<RProgram />}
+          />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }

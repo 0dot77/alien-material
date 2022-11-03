@@ -10,6 +10,7 @@ const FirstLayout = styled.section`
   grid-template-rows: 20% 30% 50%;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  padding: 0 0.5rem 0 0.5rem;
 `;
 
 export default function HoMobileFirst() {
@@ -17,8 +18,8 @@ export default function HoMobileFirst() {
     <FirstLayout>
       <Logo logoSize={'8rem'} />
       <MainText
-        enFontSize={'.5rem'}
-        krFontSize={'.25rem'}
+        enFontSize={'.75rem'}
+        krFontSize={'.5rem'}
       />
       <MainVideo />
     </FirstLayout>
