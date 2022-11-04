@@ -3,12 +3,12 @@ import institutionsData from '../data/institutionsData';
 
 const DescriptionContainer = styled.article`
   width: 100%;
-  height: 100%;
+  height: 80%;
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  opacity: 1;
 `;
 
 const SubContainer = styled.div`
