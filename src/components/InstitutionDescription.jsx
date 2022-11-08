@@ -3,7 +3,7 @@ import institutionsData from '../data/institutionsData';
 
 const DescriptionContainer = styled.article`
   width: 100%;
-  height: 80%;
+  height: ${(props) => (props.isMobile ? '60%' : '80%')};
   position: absolute;
   display: flex;
   justify-content: center;
@@ -18,9 +18,11 @@ const SubContainer = styled.div`
 
   picture {
     width: 50%;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img {
-      width: 80%;
+      width: ${(props) => (props.isMobile ? '80%' : '50%')};
       border: 5px solid rgba(9, 18, 163, 1);
     }
   }
@@ -35,20 +37,25 @@ const SubTextContainer = styled.div`
   font-family: 'KoPubWorldDotum';
 
   .header {
-    font-size: 1.5rem;
+    font-size: ${(props) => (props.isMobile ? '0.75rem' : '1.25rem')};
     margin-bottom: 0.5rem;
   }
 
   .contents {
-    font-size: 1rem;
+    font-size: ${(props) => (props.isMobile ? '0.5rem' : '1rem')};
     margin-bottom: 0.5rem;
   }
 `;
 
-export default function InstitutionDescription({ logoState }) {
+// 상단에서 모바일 체크를 해서 모바일이면 폰트를 줄여주기.
+
+export default function InstitutionDescription({ logoState, isMobile = false }) {
   return (
-    <DescriptionContainer className="des">
-      <SubContainer>
+    <DescriptionContainer
+      isMobile={isMobile}
+      className="des"
+    >
+      <SubContainer isMobile={isMobile}>
         {logoState === 'boltFamily' ? null : (
           <picture>
             <source
@@ -61,7 +68,7 @@ export default function InstitutionDescription({ logoState }) {
             />
           </picture>
         )}
-        <SubTextContainer>
+        <SubTextContainer isMobile={isMobile}>
           {institutionsData[logoState].texts.map((text, index) => (
             <p
               className={institutionsData[logoState].textState[index]}

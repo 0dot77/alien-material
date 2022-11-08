@@ -6,6 +6,8 @@ import { institutionImgPngs, institutionImgWebps } from './assets/institution';
 import { logosWebps, logosPngs } from './assets/institutionLogo';
 import { institutionPersonPngs, institutionPersonWebps } from './assets/institutionPerson';
 import { amNews } from './assets/programSource';
+import { ThemeProvider } from 'styled-components';
+import globalTheme from './style/theme';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -68,10 +70,10 @@ function App() {
     ]);
   }, []);
   return (
-    <>
+    <ThemeProvider theme={globalTheme}>
       <GlobalStyle />
       <Router />
-    </>
+    </ThemeProvider>
   );
 }
 

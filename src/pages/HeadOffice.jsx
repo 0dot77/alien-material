@@ -33,7 +33,10 @@ export default function HeadOffice() {
         <MobileLayout>
           <HoMobileFirst />
           <HoMobileSecond />
-          <HoMobileThird />
+          <HoMobileThird
+            desktopThirdSectionRef={desktopThirdSectionRef}
+            inViewThird={inViewThird}
+          />
           <HoMobileFourth />
         </MobileLayout>
       ) : (
