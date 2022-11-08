@@ -114,8 +114,8 @@ const HoMobileThird = ({ desktopThirdSectionRef, inViewThird }) => {
       </GsapContainer>
       <LogoContainer
         {...settings}
-        afterChange={(idx) => {
-          setLogoCount(idx);
+        beforeChange={(oldIdx, newIdx) => {
+          setLogoCount(newIdx);
         }}
       >
         {logosPngs.map((logo, idx) => {
