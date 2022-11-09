@@ -57,6 +57,14 @@ const ParticipantContentBox = styled.div`
 const ParticipantPaper = styled.div`
   width: 100%;
   height: 70%;
+  overflow: scroll;
+  display: flex;
+  padding: 1rem;
+
+  img {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
 `;
 
 // 클릭 됐을 때 내부 컨텐츠가 보여져야 한다.
@@ -89,6 +97,7 @@ const RPparticipant = () => {
                     <Canvas
                       style={{
                         height: '30%',
+                        padding: '1rem',
                       }}
                       camera={{
                         zoom: 20,
@@ -101,7 +110,15 @@ const RPparticipant = () => {
                       )}
                     </Canvas>
                     <ParticipantPaper>
-                      <h1>신문 컨텐츠</h1>
+                      {participants[participant].papers_png.map((image, idx) => {
+                        return (
+                          <img
+                            src={image}
+                            alt="paper"
+                            key={idx}
+                          />
+                        );
+                      })}
                     </ParticipantPaper>
                   </Suspense>
                 </ParticipantContentBox>
