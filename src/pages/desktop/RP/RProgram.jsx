@@ -12,13 +12,10 @@ const ParticipantContainer = styled.section`
 `;
 
 export default function RProgram() {
-  const isMobile = useMediaQuery({
-    query: '(max-width:767px)',
-  });
   return (
     <RPLayout>
       <ParticipantContainer>
-        <RPparticipant isMobile={isMobile} />
+        <RPparticipant />
       </ParticipantContainer>
     </RPLayout>
   );
