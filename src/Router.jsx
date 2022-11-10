@@ -1,17 +1,13 @@
 import styled from 'styled-components';
 import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import { useMediaQuery } from 'react-responsive';
+import RPMain from './pages/RPMain';
 
 const HackedOffice = lazy(() => import('./pages/HackedOffice'));
 
 const HeadOffice = lazy(() => import('./pages/HeadOffice'));
 
 const AMnews = lazy(() => import('./pages/desktop/AM/AMnews'));
-
-const RProgram = lazy(() => import('./pages/desktop/RP/RProgram'));
-
-const RProgramMobile = lazy(() => import('./pages/mobile/RP/RProgramMobile'));
 
 const LoadingContainer = styled.section`
   width: 100%;
@@ -28,9 +24,6 @@ const LoadingContainer = styled.section`
 `;
 
 export default function Router() {
-  // const checkMobile = useMediaQuery({
-  //   query: '(max-width:767px)',
-  // });
   return (
     <BrowserRouter>
       <Suspense
@@ -55,7 +48,7 @@ export default function Router() {
           />
           <Route
             path="/research"
-            element={<RProgram />}
+            element={<RPMain />}
           />
         </Routes>
       </Suspense>
