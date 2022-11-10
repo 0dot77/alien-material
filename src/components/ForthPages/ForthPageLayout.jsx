@@ -7,6 +7,7 @@ import { LogoAnim } from '../Logo';
 const ForthPageLayoutContainer = styled.section`
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 `;
 
 const NavigateLogoContainer = styled.nav`

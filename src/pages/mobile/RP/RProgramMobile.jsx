@@ -1,21 +1,23 @@
-import styled from 'styled-components';
 import ForthPageLayout from '../../../components/ForthPages/ForthPageLayout';
+import styled from 'styled-components';
 import RPparticipant from '../../../components/ForthPages/RPparticipant';
 
 const ParticipantContainer = styled.section`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
 
-export default function RProgram() {
+const RProgramMobile = () => {
   return (
     <ForthPageLayout>
       <ParticipantContainer>
-        <RPparticipant />
+        <RPparticipant isMobile={true} />
       </ParticipantContainer>
     </ForthPageLayout>
   );
-}
+};
+
+export default RProgramMobile;
