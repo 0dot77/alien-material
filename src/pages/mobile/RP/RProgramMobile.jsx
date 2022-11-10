@@ -1,4 +1,4 @@
-import ForthPageLayout from '../../../components/ForthPages/ForthPageLayout';
+import RPLayout from '../../../components/ForthPages/RPLayout';
 import styled from 'styled-components';
 import RPparticipant from '../../../components/ForthPages/RPparticipant';
 
@@ -12,11 +12,11 @@ const ParticipantContainer = styled.section`
 
 const RProgramMobile = () => {
   return (
-    <ForthPageLayout>
+    <RPLayout>
       <ParticipantContainer>
         <RPparticipant isMobile={true} />
       </ParticipantContainer>
-    </ForthPageLayout>
+    </RPLayout>
   );
 };
 

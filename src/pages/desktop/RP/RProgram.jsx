@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import RPLayout from '../../../components/ForthPages/RPLayout';
 import RPparticipant from '../../../components/ForthPages/RPparticipant';
+import { useMediaQuery } from 'react-responsive';
 
 const ParticipantContainer = styled.section`
   width: 100%;
@@ -11,10 +12,13 @@ const ParticipantContainer = styled.section`
 `;
 
 export default function RProgram() {
+  const isMobile = useMediaQuery({
+    query: '(max-width:767px)',
+  });
   return (
     <RPLayout>
       <ParticipantContainer>
-        <RPparticipant />
+        <RPparticipant isMobile={isMobile} />
       </ParticipantContainer>
     </RPLayout>
   );
