@@ -71,7 +71,6 @@ const ParticipantNameBox = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid red;
   font-size: ${(props) => (props.checkDeviceIsMobile ? '.75rem' : '1rem')};
   margin-top: ${(props) => (props.checkDeviceIsMobile ? '.25rem' : '0')};
   margin-left: ${(props) => (props.checkDeviceIsMobile ? '0' : '1.25rem')};
