@@ -14,7 +14,7 @@ const RProgramMobile = () => {
   return (
     <RPLayout>
       <ParticipantContainer>
-        <RPparticipant />
+        <RPparticipant isMobile={true} />
       </ParticipantContainer>
     </RPLayout>
   );

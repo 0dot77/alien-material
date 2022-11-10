@@ -3,7 +3,6 @@ import participants from '../../data/participants';
 import { useState, lazy, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import { useMediaQuery } from 'react-responsive';
 
 const GrabModel = lazy(() => import('../../assets/research/rp-models/LoadModel'));
 
@@ -94,12 +93,8 @@ const ParticipantPaper = styled.div`
   }
 `;
 
-const RPparticipant = () => {
-  const isMobile = useMediaQuery({
-    query: '(max-width:767px)',
-  });
+const RPparticipant = ({ isMobile }) => {
   const [participantNum, setParticipantNum] = useState(null);
-
   return (
     <ContentContainer isMobile={isMobile}>
       {Object.keys(participants).map((participant, idx) => {
