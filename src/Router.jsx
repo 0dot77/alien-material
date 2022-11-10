@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import useMobile from './hooks/useMobile';
+import { useMediaQuery } from 'react-responsive';
 
 const HackedOffice = lazy(() => import('./pages/HackedOffice'));
 
@@ -28,7 +28,9 @@ const LoadingContainer = styled.section`
 `;
 
 export default function Router() {
-  const { isMobile } = useMobile();
+  const checkMobile = useMediaQuery({
+    query: '(max-width:767px)',
+  });
   return (
     <BrowserRouter>
       <Suspense
@@ -53,7 +55,7 @@ export default function Router() {
           />
           <Route
             path="/research"
-            element={<RProgram />}
+            element={checkMobile ? <RProgramMobile /> : <RProgram />}
           />
         </Routes>
       </Suspense>

@@ -14,7 +14,7 @@ export default function RProgram() {
   return (
     <RPLayout>
       <ParticipantContainer>
-        <RPparticipant isMobile={false} />
+        <RPparticipant checkDeviceIsMobile={false} />
       </ParticipantContainer>
     </RPLayout>
   );
