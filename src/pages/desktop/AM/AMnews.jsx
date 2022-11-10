@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import ForthPageLayout from '../../../components/ForthPages/ForthPageLayout';
 import { amNews } from '../../../assets/programSource';
+import AMLayout from '../../../components/ForthPages/AMLayout';
 
 const NewsContainer = styled.article`
   width: 100%;
@@ -27,7 +27,7 @@ const FallBackMessage = styled.div`
 
 export default function AMnews() {
   return (
-    <ForthPageLayout>
+    <AMLayout>
       <NewsContainer>
         <News>
           <picture>
@@ -48,6 +48,6 @@ export default function AMnews() {
           </picture>
         </News>
       </NewsContainer>
-    </ForthPageLayout>
+    </AMLayout>
   );
 }

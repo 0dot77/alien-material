@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import ForthPageLayout from '../../../components/ForthPages/ForthPageLayout';
+import RPLayout from '../../../components/ForthPages/RPLayout';
 import RPparticipant from '../../../components/ForthPages/RPparticipant';
 
 const ParticipantContainer = styled.section`
@@ -12,10 +12,10 @@ const ParticipantContainer = styled.section`
 
 export default function RProgram() {
   return (
-    <ForthPageLayout>
+    <RPLayout>
       <ParticipantContainer>
         <RPparticipant />
       </ParticipantContainer>
-    </ForthPageLayout>
+    </RPLayout>
   );
 }
