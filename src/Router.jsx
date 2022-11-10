@@ -55,7 +55,7 @@ export default function Router() {
           />
           <Route
             path="/research"
-            element={isMobile ? <RProgramMobile /> : <RProgram />}
+            element={<RProgram />}
           />
         </Routes>
       </Suspense>
