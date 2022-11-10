@@ -56,23 +56,24 @@ const ParticipantBoxMobile = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-`;
-
-const ParticipantNameBox = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: ${(props) => (props.isMobile ? '.75rem' : '1rem')};
-  margin-top: ${(props) => (props.className === props.participantNum ? '1rem' : '')};
 `;
 
 const ParticipantContentBox = styled.div`
   width: ${(props) => (props.isMobile ? '100%' : '90%')};
   heigth: 100%;
   display: flex;
+  overflow: hidden;
+`;
+
+const ParticipantNameBox = styled.div`
+  width: ${(props) => (props.isMobile ? '100%' : '10%')};
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: ${(props) => (props.isMobile ? '.75rem' : '1rem')};
+  margin-top: ${(props) => (props.isMobile ? '.25rem' : '')};
+  margin-left: ${(props) => (props.isMobile ? '' : '1.25rem')};
 `;
 
 const ParticipantPaper = styled.div`
