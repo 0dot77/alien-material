@@ -1,4 +1,3 @@
-import { Suspense, lazy } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import styled from 'styled-components';
 import RPLayout from '../components/ForthPages/RPLayout';
