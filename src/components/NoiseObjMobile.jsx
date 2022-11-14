@@ -53,11 +53,11 @@ const descriptionAnim = keyframes`
 `;
 
 const HtmlContainer = styled.section`
-  height: 100%;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 8rem;
 `;
 
 const DescriptionCircle = styled.div`
@@ -68,7 +68,6 @@ const DescriptionCircle = styled.div`
   animation: ${descriptionAnim} 1s infinite alternate;
   position: absolute;
   z-index: 100;
-  position: absolute;
   filter: ${(props) => (props.clickedNum === props.className ? 'blur(0)' : 'blur(3px)')};
   transition: all 1s ease;
 `;
@@ -81,23 +80,26 @@ const DescriptionContainer = styled.div`
   padding-bottom: 0.1rem;
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+  overflow: scroll;
   width: 100vw;
+  height: 100%;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
   opacity: ${(props) => (props.clickedNum === props.className ? '1' : '0')};
+  font-size: 16px;
   h1 {
-    font-size: 0.75rem;
-    margin-bottom: 0.15rem;
+    font-size: 1em;
+    margin-bottom: 0.5em;
     text-align: center;
   }
   p {
-    font-size: 0.1rem;
+    font-size: 0.75em;
     text-align: center;
   }
   .eng {
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.5rem;
   }
   transition: opacity 1s ease;
 `;
