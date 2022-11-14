@@ -4,7 +4,7 @@ import MainVideo from '../../components/MainVideo';
 import Logo from '../../components/Logo';
 
 const FirstLayout = styled.section`
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: grid;
   grid-template-rows: 20% 30% 50%;

@@ -34,6 +34,7 @@ const GlobalStyle = createGlobalStyle`
     }
     background-image: url(${backgroundImageWebp}), url(${backgroundImageJpg}); 
     background-size: cover;
+
   }
 
   /* font */

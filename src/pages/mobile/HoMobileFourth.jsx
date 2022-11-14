@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import ProgramLogo from '../../components/ForthPages/ProgramLogo';
 
 const FourthLayout = styled.section`
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;

@@ -7,7 +7,7 @@ import Institution from '../../components/Institution';
 import Slider from 'react-slick';
 
 const ThirdLayout = styled.section`
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
@@ -18,6 +18,9 @@ const ThirdLayout = styled.section`
 const InstitutionContainer = styled.section`
   width: 100%;
   height: 100%;
+  img {
+    width: 80%;
+  }
 `;
 const GsapContainer = styled.div`
   width: 100%;
@@ -45,7 +48,7 @@ const HoMobileThird = ({ desktopThirdSectionRef, inViewThird }) => {
     className: 'center',
     centerMode: true,
     infinite: true,
-    centerPadding: '20px',
+    // centerPadding: '20px',
     slidesToShow: 3,
     speed: 1000,
     arrows: false,
