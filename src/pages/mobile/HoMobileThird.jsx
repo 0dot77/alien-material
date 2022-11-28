@@ -18,6 +18,7 @@ const ThirdLayout = styled.section`
 const InstitutionContainer = styled.section`
   width: 100%;
   height: 100%;
+
   img {
     width: 80%;
   }

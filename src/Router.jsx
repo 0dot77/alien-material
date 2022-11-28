@@ -3,8 +3,6 @@ import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import RPMain from './pages/RPMain';
 
-const HackedOffice = lazy(() => import('./pages/HackedOffice'));
-
 const HeadOffice = lazy(() => import('./pages/HeadOffice'));
 
 const AMnews = lazy(() => import('./pages/desktop/AM/AMnews'));
@@ -37,10 +35,6 @@ export default function Router() {
           <Route
             path="/"
             element={<HeadOffice />}
-          />
-          <Route
-            path="/changed"
-            element={<HackedOffice />}
           />
           <Route
             path="/news"

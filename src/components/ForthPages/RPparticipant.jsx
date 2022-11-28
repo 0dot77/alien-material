@@ -24,7 +24,6 @@ const ContentBox = styled.div`
   width: ${(props) => (props.checkDeviceIsMobile ? '100%' : '')};
   height: ${(props) => (props.checkDeviceIsMobile ? '' : '100%')};
   text-orientation: ${(props) => (props.checkDeviceIsMobile ? 'none' : 'upright')};
-  text-vertical: vertical-rl;
   text-align: center;
   color: white;
   background-color: blue;
@@ -41,7 +40,7 @@ const ContentBox = styled.div`
 
 const ParticipantBox = styled.div`
   width: ${(props) => (props.className === props.participantNum ? '30vw' : '3rem')};
-  heigth: 100%;
+  height: 100%;
   transition: width 1s ease;
   display: flex;
   flex-direction: ${(props) => (props.checkDeviceIsMobile ? '' : 'column')};
@@ -53,21 +52,20 @@ const ParticipantBoxMobile = styled.div`
   height: ${(props) => (props.className === props.participantNum ? '30vh' : '3rem')};
   transition: height 1s ease;
   display: flex;
-  color: white;
-  display: flex;
   flex-direction: column;
+  color: white;
 `;
 
 const ParticipantContentBox = styled.div`
   width: ${(props) => (props.checkDeviceIsMobile ? '100%' : '90%')};
-  heigth: 100%;
+  height: 100%;
   display: flex;
   overflow: hidden;
 `;
 
 const ParticipantNameBox = styled.div`
   width: ${(props) => (props.checkDeviceIsMobile ? '100%' : '10%')};
-  height: 100%;
+  height: ${(props) => (props.checkDeviceIsMobile ? '5rem' : '100%')};
   display: flex;
   justify-content: center;
   align-items: center;

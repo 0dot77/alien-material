@@ -3,7 +3,7 @@ import institutionsData from '../data/institutionsData';
 
 const DescriptionContainer = styled.article`
   width: 100%;
-  height: ${(props) => (props.isMobile ? '60%' : '80%')};
+  height: ${(props) => (props.isMobile ? '60%' : '50%')};
   position: absolute;
   display: flex;
   justify-content: center;
@@ -46,8 +46,6 @@ const SubTextContainer = styled.div`
     margin-bottom: 0.5rem;
   }
 `;
-
-// 상단에서 모바일 체크를 해서 모바일이면 폰트를 줄여주기.
 
 export default function InstitutionDescription({ logoState, isMobile = false }) {
   return (

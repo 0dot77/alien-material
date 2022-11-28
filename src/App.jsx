@@ -8,6 +8,7 @@ import { institutionPersonPngs, institutionPersonWebps } from './assets/institut
 import { amNews } from './assets/programSource';
 import { ThemeProvider } from 'styled-components';
 import globalTheme from './style/theme';
+import { RecoilRoot } from 'recoil';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -71,10 +72,12 @@ function App() {
     ]);
   }, []);
   return (
-    <ThemeProvider theme={globalTheme}>
-      <GlobalStyle />
-      <Router />
-    </ThemeProvider>
+    <RecoilRoot>
+      <ThemeProvider theme={globalTheme}>
+        <GlobalStyle />
+        <Router />
+      </ThemeProvider>
+    </RecoilRoot>
   );
 }
 
