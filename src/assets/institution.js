@@ -15,6 +15,17 @@ import apacInsWebp from './institution-imgs/webp/apac_ins.webp';
 import setiInsPng from './institution-imgs/png/seti_ins.png';
 import setiInsWebp from './institution-imgs/webp/seti_ins.webp';
 
+//hacked
+
+import hackedVoltIns from './HumanResearch/institutions/voltInsHacked.gif';
+import hackedVoltCenterIns from './HumanResearch/institutions/voltCenterHacked.gif';
+import hackedGeneticaIns from './HumanResearch/institutions/geneticaInsHacked.png';
+import hackedApacIns from './HumanResearch/institutions/apacInsHacked.png';
+import hackedMecaragiIns from './HumanResearch/institutions/mecaragiInsHacked.gif';
+import hackedChochengIns from './HumanResearch/institutions/chochengInsHacked.gif';
+import hackedIonicIns from './HumanResearch/institutions/ionicInsHacked.gif';
+import hackedSetiIns from './HumanResearch/institutions/setiHacked.gif';
+
 const institutionImgPngs = [
   boltInsPng,
   boltCenterPng,
@@ -37,4 +48,15 @@ const institutionImgWebps = [
   setiInsWebp,
 ];
 
-export { institutionImgPngs, institutionImgWebps };
+const hackedInstitutions = [
+  hackedVoltIns,
+  hackedVoltCenterIns,
+  hackedGeneticaIns,
+  hackedApacIns,
+  hackedMecaragiIns,
+  hackedChochengIns,
+  hackedIonicIns,
+  hackedSetiIns,
+];
+
+export { institutionImgPngs, institutionImgWebps, hackedInstitutions };

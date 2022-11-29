@@ -1,5 +1,5 @@
-import { institutionImgPngs, institutionImgWebps } from '../assets/institution';
-import { institutionPersonPngs, institutionPersonWebps } from '../assets/institutionPerson';
+import { institutionImgPngs, institutionImgWebps, hackedInstitutions } from '../assets/institution';
+import { institutionPersonPngs, institutionPersonWebps, hackedInstitutionPersons } from '../assets/institutionPerson';
 import { logosPngs, logosWebps } from '../assets/institutionLogo';
 
 /**
@@ -10,6 +10,8 @@ const institutionsData = {
     logo: logosPngs[0],
     institutionPerson: [institutionPersonWebps[0], institutionPersonPngs[0]],
     institutionImg: [institutionImgWebps[0], institutionImgPngs[0]],
+    hakcedInsImg: hackedInstitutions[0],
+    hackedPersonImg: hackedInstitutionPersons[0],
     textState: ['header', 'contents'],
     texts: ['Bolt Family (볼트 가문)', '후원기관 sponsoring organization'],
   },
@@ -17,6 +19,8 @@ const institutionsData = {
     logo: logosPngs[1],
     institutionPerson: [institutionPersonWebps[1], institutionPersonPngs[1]],
     institutionImg: [institutionImgWebps[1], institutionImgPngs[1]],
+    hakcedInsImg: hackedInstitutions[1],
+    hackedPersonImg: hackedInstitutionPersons[1],
     textState: ['header', 'header', 'contents', 'contents'],
     texts: [
       'BOLT Institute of the earth’s defense with AMRP command center',
@@ -29,6 +33,8 @@ const institutionsData = {
     logo: logosPngs[2],
     institutionPerson: [institutionPersonWebps[2], institutionPersonPngs[2]],
     institutionImg: [institutionImgWebps[2], institutionImgPngs[2]],
+    hakcedInsImg: hackedInstitutions[2],
+    hackedPersonImg: hackedInstitutionPersons[2],
     textState: ['header', 'header', 'contents', 'contents', 'contents', 'contents'],
     texts: [
       'GENERTICA LIBERTY (제네티카 레버티)',
@@ -43,6 +49,8 @@ const institutionsData = {
     logo: logosPngs[3],
     institutionPerson: [institutionPersonWebps[3], institutionPersonPngs[3]],
     institutionImg: [institutionImgWebps[3], institutionImgPngs[3]],
+    hakcedInsImg: hackedInstitutions[3],
+    hackedPersonImg: hackedInstitutionPersons[3],
     textState: ['header', 'header', 'contents', 'contents'],
     texts: [
       'Applied Physics AMRP Center(APAC)',
@@ -55,6 +63,8 @@ const institutionsData = {
     logo: logosPngs[4],
     institutionPerson: [institutionPersonWebps[4], institutionPersonPngs[4]],
     institutionImg: [institutionImgWebps[4], institutionImgPngs[4]],
+    hakcedInsImg: hackedInstitutions[4],
+    hackedPersonImg: hackedInstitutionPersons[4],
     textState: ['header', 'header', 'contents', 'contents'],
     texts: [
       'Mecha:(L) (메카라지)',
@@ -67,6 +77,8 @@ const institutionsData = {
     logo: logosPngs[5],
     institutionPerson: [institutionPersonWebps[5], institutionPersonPngs[5]],
     institutionImg: [institutionImgWebps[5], institutionImgPngs[5]],
+    hakcedInsImg: hackedInstitutions[5],
+    hackedPersonImg: hackedInstitutionPersons[5],
     textState: ['header', 'header', 'contents', 'contents'],
     texts: [
       'Cho Chang Academy of AMRP(초챙 암프 아카데미)',
@@ -79,6 +91,8 @@ const institutionsData = {
     logo: logosPngs[6],
     institutionPerson: [institutionPersonWebps[6], institutionPersonPngs[6]],
     institutionImg: [institutionImgWebps[6], institutionImgPngs[6]],
+    hakcedInsImg: hackedInstitutions[6],
+    hackedPersonImg: hackedInstitutionPersons[6],
     textState: ['header', 'header', 'header', 'contents', 'contents'],
     texts: [
       'Unidentified substance detection IONIC energy LAB(아이오닉 에너지 연구소)',
@@ -92,6 +106,8 @@ const institutionsData = {
     logo: logosPngs[7],
     institutionPerson: [institutionPersonWebps[7], institutionPersonPngs[7]],
     institutionImg: [institutionImgWebps[7], institutionImgPngs[7]],
+    hakcedInsImg: hackedInstitutions[7],
+    hackedPersonImg: hackedInstitutionPersons[7],
     textState: ['header', 'header', 'header', 'contents', 'contents'],
     texts: [
       'The SETI Institute',

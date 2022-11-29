@@ -13,6 +13,15 @@ import setiPersonWebp from './institution-persons/webp/seti-person.webp';
 import boltcenterPersonPng from './institution-persons/png/boltcenter-person.png';
 import boltcenterPersonWebp from './institution-persons/webp/boltcenter-person.webp';
 
+//해킹 버전
+import hackedBoltCenterPerson from './HumanResearch/peoples/boltcenterPersonHacked.gif';
+import hackedGeneticaPerson from './HumanResearch/peoples/geneticaPersonHacked.gif';
+import hackedApacPerson from './HumanResearch/peoples/apacPersonHacked.gif';
+import hackedMecaragiPerson from './HumanResearch/peoples/mecaragiPersonHacked.gif';
+import hackedChochengPerson from './HumanResearch/peoples/chochengPersonHacked.gif';
+import hackedIonicPerson from './HumanResearch/peoples/ionicPersonHacked.gif';
+import hackedSetiPerson from './HumanResearch/peoples/setiPersonHacked.gif';
+
 const institutionPersonPngs = [
   null,
   boltcenterPersonPng,
@@ -35,4 +44,15 @@ const institutionPersonWebps = [
   setiPersonWebp,
 ];
 
-export { institutionPersonPngs, institutionPersonWebps };
+const hackedInstitutionPersons = [
+  null,
+  hackedBoltCenterPerson,
+  hackedGeneticaPerson,
+  hackedApacPerson,
+  hackedMecaragiPerson,
+  hackedChochengPerson,
+  hackedIonicPerson,
+  hackedSetiPerson,
+];
+
+export { institutionPersonPngs, institutionPersonWebps, hackedInstitutionPersons };

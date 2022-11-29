@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 import NoiseObjMobile from '../../components/NoiseObjMobile';
+import { pageState } from '../../data/atom';
+import { useRecoilState } from 'recoil';
+import HumanScaning from '../../components/HumanResearch/HumanScaning';
+
 const SecondLayout = styled.section`
   width: 100vw;
   height: 100vh;
@@ -9,9 +13,6 @@ const SecondLayout = styled.section`
 `;
 
 export default function HoMobileSecond() {
-  return (
-    <SecondLayout>
-      <NoiseObjMobile />
-    </SecondLayout>
-  );
+  const [isHacked] = useRecoilState(pageState);
+  return <SecondLayout>{isHacked ? <HumanScaning sc={[0.08, 0.08, 0.08]} /> : <NoiseObjMobile />}</SecondLayout>;
 }

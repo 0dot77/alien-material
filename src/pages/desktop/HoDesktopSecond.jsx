@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 import NoiseObj from '../../components/NoiseObj';
+import { pageState } from '../../data/atom';
+import { useRecoilState } from 'recoil';
+import HumanScaning from '../../components/HumanResearch/HumanScaning';
 
 const SecondLayout = styled.section`
   width: 100%;
@@ -9,9 +12,6 @@ const SecondLayout = styled.section`
 `;
 
 export default function HoDesktopSecond() {
-  return (
-    <SecondLayout>
-      <NoiseObj />
-    </SecondLayout>
-  );
+  const [isHacked] = useRecoilState(pageState);
+  return <SecondLayout>{isHacked ? <HumanScaning sc={[0.25, 0.25, 0.25]} /> : <NoiseObj />}</SecondLayout>;
 }

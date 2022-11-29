@@ -1,7 +1,6 @@
 import { useInView } from 'react-intersection-observer';
 import { MobileLayout, DesktopLayout } from '../components/Layout';
 import { useMediaQuery } from 'react-responsive';
-import styled from 'styled-components';
 
 // desktop
 import HoDesktopFirst from './desktop/HoDesktopFirst';
@@ -21,13 +20,6 @@ import { useRecoilState } from 'recoil';
 import GifFlying from '../components/HumanResearch/GifFlying';
 import { useEffect } from 'react';
 
-const TestBtn = styled.button`
-  width: 5rem;
-  height: 3rem;
-  position: fixed;
-  font-size: 2rem;
-`;
-
 export default function HeadOffice() {
   // 외계물질 관찰일지 -> 휴먼 관찰일지
   const [isHuman, setIsHuman] = useRecoilState(pageState);
@@ -38,14 +30,13 @@ export default function HeadOffice() {
     threshold: 1,
   });
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setIsHuman((prev) => !prev);
-  //   }, 20000);
-  // }, []);
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsHuman((prev) => !prev), 300000);
+    return () => clearTimeout(timeout);
+  }, [isHuman]);
   return (
     <>
-      {isHuman ? null : <GifFlying />}
+      {isHuman ? <GifFlying /> : null}
       {isMobile ? (
         <MobileLayout>
           <HoMobileFirst />

@@ -126,6 +126,13 @@ const RPparticipant = ({ checkDeviceIsMobile }) => {
                           height: '30vh',
                           padding: '1rem',
                         }}
+                        gl={{
+                          powerPreference: 'high-performance',
+                          alpha: true,
+                          antialias: false,
+                          stencil: false,
+                          depth: false,
+                        }}
                         camera={{
                           zoom: 20,
                         }}

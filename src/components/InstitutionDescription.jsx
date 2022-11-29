@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import institutionsData from '../data/institutionsData';
+import { pageState } from '../data/atom';
+import { useRecoilState } from 'recoil';
 
 const DescriptionContainer = styled.article`
   width: 100%;
@@ -23,7 +25,7 @@ const SubContainer = styled.div`
     align-items: center;
     img {
       width: ${(props) => (props.isMobile ? '80%' : '50%')};
-      border: 5px solid rgba(9, 18, 163, 1);
+      border: ${(props) => (props.isHacked ? '' : '5px solid rgba(9, 18, 163, 1)')};
     }
   }
 `;
@@ -48,13 +50,24 @@ const SubTextContainer = styled.div`
 `;
 
 export default function InstitutionDescription({ logoState, isMobile = false }) {
+  const [isHacked] = useRecoilState(pageState);
   return (
     <DescriptionContainer
       isMobile={isMobile}
       className="des"
     >
-      <SubContainer isMobile={isMobile}>
-        {logoState === 'boltFamily' ? null : (
+      <SubContainer
+        isMobile={isMobile}
+        isHacked={isHacked}
+      >
+        {logoState === 'boltFamily' ? null : isHacked ? (
+          <picture>
+            <img
+              src={institutionsData[logoState].hackedPersonImg}
+              alt="hacked person img"
+            />
+          </picture>
+        ) : (
           <picture>
             <source
               srcSet={institutionsData[logoState].institutionPerson[0]}
