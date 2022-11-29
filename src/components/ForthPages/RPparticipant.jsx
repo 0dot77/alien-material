@@ -3,6 +3,8 @@ import participants from '../../data/participants';
 import { useState, lazy, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
+import { pageState } from '../../data/atom';
+import { useRecoilState } from 'recoil';
 
 const GrabModel = lazy(() => import('../../assets/research/rp-models/LoadModel'));
 
@@ -61,6 +63,15 @@ const ParticipantContentBox = styled.div`
   height: 100%;
   display: flex;
   overflow: hidden;
+  h1 {
+    text-align: center;
+  }
+  .collage {
+    width: 100%;
+    height: 50%;
+    padding: 1rem;
+    cursor: default;
+  }
 `;
 
 const ParticipantNameBox = styled.div`
@@ -89,9 +100,15 @@ const ParticipantPaper = styled.div`
     width: 100%;
     margin-bottom: 1rem;
   }
+
+  .video {
+    border: none;
+    height: 100%;
+  }
 `;
 
 const RPparticipant = ({ checkDeviceIsMobile }) => {
+  const [isHacked] = useRecoilState(pageState);
   const [participantNum, setParticipantNum] = useState(null);
   return (
     <ContentContainer checkDeviceIsMobile={checkDeviceIsMobile}>
@@ -119,42 +136,64 @@ const RPparticipant = ({ checkDeviceIsMobile }) => {
                 </ParticipantNameBox>
                 {idx + 1 === participantNum ? (
                   <ParticipantContentBox checkDeviceIsMobile={checkDeviceIsMobile}>
-                    <Suspense fallback={<h1>연구자 데이터 수신 요청중...</h1>}>
-                      <Canvas
-                        style={{
-                          width: '50%',
-                          height: '30vh',
-                          padding: '1rem',
-                        }}
-                        gl={{
-                          powerPreference: 'high-performance',
-                          alpha: true,
-                          antialias: false,
-                          stencil: false,
-                          depth: false,
-                        }}
-                        camera={{
-                          zoom: 20,
-                        }}
-                      >
-                        <ambientLight intensity={1} />
-                        <OrbitControls panSpeed={0.1} />
-                        {participants[participant].model === null ? null : (
-                          <GrabModel modelPath={participants[participant].model} />
-                        )}
-                      </Canvas>
-                      <ParticipantPaper checkDeviceIsMobile={checkDeviceIsMobile}>
-                        {participants[participant].papers_png.map((image, idx) => {
-                          return (
-                            <img
-                              src={image}
-                              alt="paper"
-                              key={idx}
-                            />
-                          );
-                        })}
-                      </ParticipantPaper>
-                    </Suspense>
+                    {isHacked ? (
+                      <>
+                        <img
+                          className="collage"
+                          src={participants[participant].collage}
+                        />
+                        <ParticipantPaper>
+                          {participants[participant].youtube_url.map((image, idx) => {
+                            return (
+                              <iframe
+                                allowFullScreen
+                                className="video"
+                                src={image}
+                                alt="paper"
+                                key={idx}
+                              />
+                            );
+                          })}
+                        </ParticipantPaper>
+                      </>
+                    ) : (
+                      <Suspense fallback={<h1>연구자 데이터 수신 요청중...</h1>}>
+                        <Canvas
+                          style={{
+                            width: '50%',
+                            height: '30vh',
+                            padding: '1rem',
+                          }}
+                          gl={{
+                            powerPreference: 'high-performance',
+                            alpha: true,
+                            antialias: false,
+                            stencil: false,
+                            depth: false,
+                          }}
+                          camera={{
+                            zoom: 20,
+                          }}
+                        >
+                          <ambientLight intensity={1} />
+                          <OrbitControls panSpeed={0.1} />
+                          {participants[participant].model === null ? null : (
+                            <GrabModel modelPath={participants[participant].model} />
+                          )}
+                        </Canvas>
+                        <ParticipantPaper checkDeviceIsMobile={checkDeviceIsMobile}>
+                          {participants[participant].papers_png.map((image, idx) => {
+                            return (
+                              <img
+                                src={image}
+                                alt="paper"
+                                key={idx}
+                              />
+                            );
+                          })}
+                        </ParticipantPaper>
+                      </Suspense>
+                    )}
                   </ParticipantContentBox>
                 ) : null}
               </ParticipantBoxMobile>
@@ -169,34 +208,55 @@ const RPparticipant = ({ checkDeviceIsMobile }) => {
                 </ParticipantNameBox>
                 {idx + 1 === participantNum ? (
                   <ParticipantContentBox>
-                    <Suspense fallback={<h1>연구자 데이터 수신 요청중...</h1>}>
-                      <Canvas
-                        style={{
-                          height: '30%',
-                          padding: '1rem',
-                        }}
-                        camera={{
-                          zoom: 20,
-                        }}
-                      >
-                        <ambientLight intensity={1} />
-                        <OrbitControls panSpeed={0.1} />
-                        {participants[participant].model === null ? null : (
-                          <GrabModel modelPath={participants[participant].model} />
-                        )}
-                      </Canvas>
-                      <ParticipantPaper>
-                        {participants[participant].papers_png.map((image, idx) => {
-                          return (
-                            <img
-                              src={image}
-                              alt="paper"
-                              key={idx}
-                            />
-                          );
-                        })}
-                      </ParticipantPaper>
-                    </Suspense>
+                    {isHacked ? (
+                      <>
+                        <img
+                          className="collage"
+                          src={participants[participant].collage}
+                        />
+                        <ParticipantPaper>
+                          {participants[participant].youtube_url.map((image, idx) => {
+                            return (
+                              <iframe
+                                className="video"
+                                src={image}
+                                alt="paper"
+                                key={idx}
+                              />
+                            );
+                          })}
+                        </ParticipantPaper>
+                      </>
+                    ) : (
+                      <Suspense fallback={<h1>연구자 데이터 수신 요청중...</h1>}>
+                        <Canvas
+                          style={{
+                            height: '30%',
+                            padding: '1rem',
+                          }}
+                          camera={{
+                            zoom: 20,
+                          }}
+                        >
+                          <ambientLight intensity={1} />
+                          <OrbitControls panSpeed={0.1} />
+                          {participants[participant].model === null ? null : (
+                            <GrabModel modelPath={participants[participant].model} />
+                          )}
+                        </Canvas>
+                        <ParticipantPaper>
+                          {participants[participant].papers_png.map((image, idx) => {
+                            return (
+                              <img
+                                src={image}
+                                alt="paper"
+                                key={idx}
+                              />
+                            );
+                          })}
+                        </ParticipantPaper>
+                      </Suspense>
+                    )}
                   </ParticipantContentBox>
                 ) : null}
               </ParticipantBox>
