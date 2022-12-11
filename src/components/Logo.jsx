@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { MainLogoPng, MainLogoWebp } from '../assets/images';
+import { useNavigate } from 'react-router-dom';
 
 export const LogoAnim = keyframes`
     from {
@@ -18,6 +19,7 @@ const LogoContainer = styled.div`
   align-items: center;
   img {
     width: ${(props) => props.logoSize};
+    cursor: ${(props) => (props.url ? 'pointer' : 'default')};
     animation: ${LogoAnim} 3s ease-in-out infinite alternate;
   }
 `;
@@ -26,16 +28,27 @@ const LogoContainer = styled.div`
  * @param {string} logoSize rem 사용
  * @param {string} marginTop rem 사용
  */
-export default function Logo({ logoSize }) {
+export default function Logo({ logoSize, url = false }) {
+  const nav = useNavigate();
   return (
-    <LogoContainer logoSize={logoSize}>
+    <LogoContainer
+      url={url}
+      logoSize={logoSize}
+      onClick={() => {
+        if (url) {
+          nav('/');
+        }
+      }}
+    >
       <picture>
         <source
+          draggable="false"
           srcSet={MainLogoWebp}
           type="image/webp"
         ></source>
         <img
           src={MainLogoPng}
+          draggable="false"
           alt="main-logo"
         />
       </picture>

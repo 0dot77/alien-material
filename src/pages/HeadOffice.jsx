@@ -18,11 +18,10 @@ import HoMobileFourth from './mobile/HoMobileFourth';
 import { pageState } from '../data/atom';
 import { useRecoilState } from 'recoil';
 import GifFlying from '../components/HumanResearch/GifFlying';
-import { useEffect } from 'react';
 
 export default function HeadOffice() {
   // 외계물질 관찰일지 -> 휴먼 관찰일지
-  const [isHuman, setIsHuman] = useRecoilState(pageState);
+  const [isHuman] = useRecoilState(pageState);
   const isMobile = useMediaQuery({
     query: '(max-width:767px)',
   });
@@ -30,10 +29,6 @@ export default function HeadOffice() {
     threshold: 1,
   });
 
-  useEffect(() => {
-    const timeout = setTimeout(() => setIsHuman((prev) => !prev), 300000);
-    return () => clearTimeout(timeout);
-  }, [isHuman]);
   return (
     <>
       {isHuman ? <GifFlying /> : null}

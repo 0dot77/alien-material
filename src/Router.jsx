@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import RPMain from './pages/RPMain';
+import Credit from './pages/Credit';
 
 const HeadOffice = lazy(() => import('./pages/HeadOffice'));
 
@@ -43,6 +44,10 @@ export default function Router() {
           <Route
             path="/research"
             element={<RPMain />}
+          />
+          <Route
+            path="/credit"
+            element={<Credit />}
           />
         </Routes>
       </Suspense>
