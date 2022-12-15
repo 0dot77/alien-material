@@ -54,7 +54,7 @@ export default function Credit() {
         </div>
         <div>
           <span className="main">아트디렉터</span>
-          <span>한국문화예술위원회 온라인미디어예술활동지원사업</span>
+          <span>김연준</span>
         </div>
         <div>
           <span className="main">웹 개발</span>
